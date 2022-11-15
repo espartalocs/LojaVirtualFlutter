@@ -1,9 +1,25 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/src/configs/custom_dors.dart';
+import 'package:loja_virtual/src/home/components/categoty_title.dart';
 
-class HomeTab extends StatelessWidget {
-  const HomeTab({Key? key}) : super(key: key);
+class HomeTab extends StatefulWidget {
+  HomeTab({Key? key}) : super(key: key);
+
+  @override
+  State<HomeTab> createState() => _HomeTabState();
+}
+
+class _HomeTabState extends State<HomeTab> {
+  final List<String> categories = [
+    'Frutas',
+    'Grãos',
+    'Verduras',
+    'Temperos',
+    'Cereais',
+  ];
+
+  String selectedCategory = 'Frutas';
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +64,7 @@ class HomeTab extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 20, vertical: 10
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: TextFormField(
               decoration: InputDecoration(
                 filled: true,
@@ -69,6 +83,25 @@ class HomeTab extends StatelessWidget {
                         const BorderSide(width: 0, style: BorderStyle.none)),
               ),
             ),
+          ),
+          Container(
+            padding: const EdgeInsets.only(left: 25),
+            height: 40,
+            child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (_, index) {
+                  return CategoryTitle(
+                    onPressed: () {
+                      setState(() {
+                        selectedCategory = categories[index];
+                      });
+                    },
+                    category: categories[index],
+                    isSelect: categories[index] == selectedCategory,
+                  );
+                },
+                separatorBuilder: (_, index) => const SizedBox(width: 10),
+                itemCount: categories.length),
           )
         ],
       ),

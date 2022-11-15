@@ -17,7 +17,7 @@ class _BaseScreenState extends State<BaseScreen> {
       body: PageView(
         controller: pageController,
         children: [
-          const HomeTab(),
+           HomeTab(),
           Container(),
           Container(),
           Container(),
