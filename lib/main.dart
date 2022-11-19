@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:loja_virtual/src/auth/sing_in_screen.dart';
+import 'package:loja_virtual/src/pages/auth/sing_in_screen.dart';
 
 void main() {
   runApp(const MyApp());

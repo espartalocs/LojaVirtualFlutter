@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:loja_virtual/src/home/home_tab.dart';
+import 'package:loja_virtual/src/pages/home/home_tab.dart';
 
 class BaseScreen extends StatefulWidget {
-  BaseScreen({Key? key}) : super(key: key);
+  const BaseScreen({Key? key}) : super(key: key);
 
   @override
   State<BaseScreen> createState() => _BaseScreenState();
@@ -17,7 +17,7 @@ class _BaseScreenState extends State<BaseScreen> {
       body: PageView(
         controller: pageController,
         children: [
-           HomeTab(),
+          HomeTab(),
           Container(),
           Container(),
           Container(),
