@@ -1,5 +1,6 @@
 import 'package:loja_virtual/src/models/cart_item_model.dart';
 import 'package:loja_virtual/src/models/item_model.dart';
+import 'package:loja_virtual/src/models/user_model.dart';
 
 ItemModel apple = ItemModel(
   description:
@@ -78,3 +79,10 @@ List<CartItemModel> cartItem = [
   CartItemModel(item: mango, quantity: 1),
   CartItemModel(item: guava, quantity: 3),
 ];
+
+UserModel user = UserModel(
+    nome: 'João Cezar',
+    email: 'Joao_cezar@gmail.com',
+    celular: '60 9999-999',
+    cpf: '999.999.999-99',
+    senha: '123453');

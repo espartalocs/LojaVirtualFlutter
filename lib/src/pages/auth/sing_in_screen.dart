@@ -2,7 +2,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import 'package:loja_virtual/src/configs/custom_dors.dart';
-import 'package:loja_virtual/src/pages/auth/components/custom_text_fields.dart';
+import 'package:loja_virtual/src/pages/commom_widgets/custom_text_fields.dart';
 import 'package:loja_virtual/src/pages/auth/sin_up_screen.dart';
 import 'package:loja_virtual/src/pages/base/base_screen.dart';
 

@@ -3,7 +3,7 @@ import 'package:loja_virtual/src/configs/custom_dors.dart';
 import 'package:loja_virtual/src/models/cart_item_model.dart';
 import 'package:loja_virtual/src/pages/cart/components/cart_tile.dart';
 import 'package:loja_virtual/src/service/utils_services.dart';
-import 'package:loja_virtual/src/configs/app_data.dart' as appData;
+import 'package:loja_virtual/src/configs/app_data.dart' as appdata;
 
 class CartTab extends StatefulWidget {
   const CartTab({Key? key}) : super(key: key);
@@ -17,13 +17,13 @@ class _CartTabState extends State<CartTab> {
 
   void removeItemFromCart(CartItemModel cartItem) {
     setState(() {
-      appData.cartItem.remove(cartItem);
+      appdata.cartItem.remove(cartItem);
     });
   }
 
   double cartTotalPrice() {
     double total = 0;
-    for (var item in appData.cartItem) {
+    for (var item in appdata.cartItem) {
       total = item.totalPrice();
     }
     return total;
@@ -39,10 +39,10 @@ class _CartTabState extends State<CartTab> {
         children: [
           Expanded(
             child: ListView.builder(
-                itemCount: appData.cartItem.length,
+                itemCount: appdata.cartItem.length,
                 itemBuilder: (_, index) {
                   return CartTile(
-                    cartItem: appData.cartItem[index],
+                    cartItem: appdata.cartItem[index],
                     remove: removeItemFromCart,
                   );
                 }),
@@ -85,6 +85,7 @@ class _CartTabState extends State<CartTab> {
                     ),
                     onPressed: () async {
                       bool? result = await showOrderConfirmation();
+                      result;
                     },
                     child: const Text(
                       'Concluir pedido',
