@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:loja_virtual/src/pages/cart/cart_tab.dart';
 import 'package:loja_virtual/src/pages/home/home_tab.dart';
+import 'package:loja_virtual/src/pages/orders/orders_tab.dart';
 import 'package:loja_virtual/src/pages/profile/profile_tab.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -18,11 +19,11 @@ class _BaseScreenState extends State<BaseScreen> {
     return Scaffold(
       body: PageView(
         controller: pageController,
-        children: [
-          const HomeTab(),
-          const CartTab(),
-          Container(),
-          const ProfileTab(),
+        children: const [
+          HomeTab(),
+          CartTab(),
+          OrderTab(),
+          ProfileTab(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
