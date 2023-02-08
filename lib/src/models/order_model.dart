@@ -1,5 +1,4 @@
 import 'package:loja_virtual/src/models/cart_item_model.dart';
-import 'package:loja_virtual/src/models/item_model.dart';
 
 class OrderModel {
   String id;
